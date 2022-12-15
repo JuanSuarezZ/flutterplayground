@@ -21,7 +21,7 @@ class _MyAppState extends State<App> {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      initialRoute: "3dImagesExample",
+      initialRoute: "nativeActivity",
       routes: getAplicationRoutes,
     );
   }
