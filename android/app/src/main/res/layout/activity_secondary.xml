@@ -4,6 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:rotation="-14"
+    android:rotationX="46"
+    android:rotationY="-6"
     tools:context=".SecondaryActivity">
 
     <Button

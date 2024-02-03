@@ -1,11 +1,13 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
-const CHANNEL = "JDev.channel";
-const KEY_NATIVE = "showNativeView";
+const channel = "JDev.channel";
+const keyNative = "showNativeView";
 
 class NativeActivity extends StatelessWidget {
-  static const platform = MethodChannel(CHANNEL);
+  static const platform = MethodChannel(channel);
 
   NativeActivity({Key? key}) : super(key: key) {
     platform.setMethodCallHandler(_handleMethod);
@@ -31,15 +33,15 @@ class NativeActivity extends StatelessWidget {
     );
   }
 
-  Future<Null> _showNativeView() async {
-    await platform.invokeMethod(KEY_NATIVE);
+  Future<void> _showNativeView() async {
+    await platform.invokeMethod(keyNative);
   }
 
   Future<dynamic> _handleMethod(MethodCall call) async {
-    switch (call.method) {
-      case "message":
-        debugPrint(call.arguments);
-        return Future.value("");
-    }
+    log(call.toString());
+    // switch (call.method) {
+    //   case "message":
+    //     return Future.value("");
+    // }
   }
 }
